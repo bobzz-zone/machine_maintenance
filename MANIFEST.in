@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include machine_maintenance *.css
+recursive-include machine_maintenance *.csv
+recursive-include machine_maintenance *.html
+recursive-include machine_maintenance *.ico
+recursive-include machine_maintenance *.js
+recursive-include machine_maintenance *.json
+recursive-include machine_maintenance *.md
+recursive-include machine_maintenance *.png
+recursive-include machine_maintenance *.py
+recursive-include machine_maintenance *.svg
+recursive-include machine_maintenance *.txt
+recursive-exclude machine_maintenance *.pyc
