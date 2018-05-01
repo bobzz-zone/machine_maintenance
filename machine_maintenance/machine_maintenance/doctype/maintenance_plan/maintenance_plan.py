@@ -8,3 +8,5 @@ from frappe.model.document import Document
 
 class MaintenancePlan(Document):
 	pass
+	def on_submit(self):
+		self.last_date=self.start_date

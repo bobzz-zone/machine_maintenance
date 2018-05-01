@@ -9,6 +9,6 @@ cur_frm.add_fetch("maintenance_sop", "work_type", "work_type");
 cur_frm.add_fetch("maintenance_sop", "level", "level");
 cur_frm.add_fetch("maintenance_sop", "duration", "duration");
 cur_frm.add_fetch("maintenance_sop", "sop", "sop");
-
+cur_frm.add_fetch("technician", "email", "email");
 	}
 });
