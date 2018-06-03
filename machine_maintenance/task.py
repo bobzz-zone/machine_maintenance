@@ -7,7 +7,7 @@ def daily():
 		where docstatus=1 and stop=0 and datediff("{}",last_date )=frequency-lead_time
 	 """.format(now()),as_dict=1)
 	for row in list_sc:
-		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepert Table` where parent="{}" """.format(row["name"]),as_dict=1)
+		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepart Table` where parent="{}" """.format(row["name"]),as_dict=1)
 		sparepart=[]
 		for det in sparepart_list:
 			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":row["qty"]})
@@ -37,7 +37,7 @@ def test():
 		where docstatus=1 and stop=0
 	 """.format(now()),as_dict=1)
 	for row in list_sc:
-		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepert Table` where parent="{}" """.format(row["name"]),as_dict=1)
+		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepart Table` where parent="{}" """.format(row["name"]),as_dict=1)
 		sparepart=[]
 		for det in sparepart_list:
 			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":row["qty"]})
