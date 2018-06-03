@@ -10,7 +10,7 @@ def daily():
 		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepart Table` where parent="{}" """.format(row["name"]),as_dict=1)
 		sparepart=[]
 		for det in sparepart_list:
-			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":row["qty"]})
+			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":det["qty"]})
 		doc = frappe.get_doc({
 			"doctype": "Maintenance Schedule",
 			"machine":row["machine"],
@@ -40,7 +40,7 @@ def test():
 		sparepart_list = frappe.db.sql("""select sparepart,qty from `tabSparepart Table` where parent="{}" """.format(row["name"]),as_dict=1)
 		sparepart=[]
 		for det in sparepart_list:
-			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":row["qty"]})
+			sparepart.append({"doctype":"Schedule Sparepart Table","sparepart":det["sparepart"],"qty":det["qty"]})
 		doc = frappe.get_doc({
 			"doctype": "Maintenance Schedule",
 			"machine":row["machine"],
